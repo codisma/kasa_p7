@@ -1,0 +1,134 @@
+// Style du loading-spinner
+.loading-spinner {
+  width: 100vw;
+  height: 100vh;
+  background: $color-secondary;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  animation: display-loader 3s linear;
+  visibility: hidden;
+  &__border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid transparent;
+    border-top: 8px solid $color-primary;
+    border-bottom: 8px solid $color-fourth;
+    border-radius: 100px;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: loading-spinner 3s linear;
+    z-index: 50;
+    visibility: hidden;
+  }
+}
+
+@keyframes display-loader {
+  0% {
+    visibility: visible;
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes loading-spinner {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.logements__info {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin-top: 16px;
+
+  & h1 {
+    color: $color-primary;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $color-primary;
+    font-size: 18px;
+    font-weight: 500px;
+    margin-bottom: 20px;
+  }
+}
+
+/******** RESPONSIVE *********/
+
+// Breakpoint écran large
+@media screen and (min-width: 1400px) {
+  .logements__info {
+    max-width: none;
+  }
+
+  .logements__info h1 {
+    font-size: 36px;
+    margin-top: 16px;
+  }
+}
+
+// Breakpoint tablette
+@media screen and (max-width: 991px) {
+  .logements__info {
+    display: flex;
+    flex-direction: column;
+
+    & .logements__notation {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Breakpoint mobile
+@media screen and (max-width: 576px) {
+  .logements_info {
+    margin-top: 15px;
+
+    & h1 {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    & p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+}

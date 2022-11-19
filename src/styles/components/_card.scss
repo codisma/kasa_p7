@@ -1,0 +1,89 @@
+.logements {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  background-color: $color-tertiary;
+  padding: 32px 16px;
+  border-radius: 25px;
+  max-width: 1240px;
+
+  & figure {
+    max-width: 340px;
+    height: 340px;
+    position: relative;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 10px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px;
+    }
+
+    & figcaption {
+      position: absolute;
+      font-weight: 500;
+      bottom: 15px;
+      margin-left: 16px;
+      margin-right: 10px;
+      font-size: 18px;
+      color: $color-secondary;
+    }
+  }
+}
+
+/******** RESPONSIVE **********/
+
+// Breakpoint écran large
+@media screen and (min-width: 1400px) {
+  .logements {
+    max-width: none;
+    padding: 56px 50px;
+  }
+}
+
+// Breakpoint tablette
+@media screen and (max-width: 991px) {
+  .logements {
+    display: block;
+    background-color: $color-secondary;
+    padding: 0;
+    width: 100%;
+
+    & figure {
+      max-width: 100%;
+      height: 400px;
+      margin: 20px 0;
+    }
+  }
+}
+
+// Breakpoint Mobile
+@media screen and (max-width: 576px) {
+  .logements figure {
+    max-width: 100%;
+    height: 255px;
+    margin: 20px 0;
+  }
+}

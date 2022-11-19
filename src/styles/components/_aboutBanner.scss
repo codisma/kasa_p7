@@ -1,0 +1,69 @@
+.about__banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0 64px 0;
+  max-width: 1240px;
+  height: 223px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/aboutBanner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(70%);
+    border-radius: 25px;
+  }
+}
+
+/******** RESPONSIVE **********/
+
+// Breakpoint écran large
+@media screen and (min-width: 1400px) {
+  .about__banner {
+    max-width: none;
+  }
+}
+
+// Breakpoint tablette
+@media screen and (max-width: 991px) {
+  .about__banner {
+    max-width: 100%;
+    height: 200px;
+
+    &::before {
+      height: 100%;
+    }
+  }
+}
+
+// Breakpoint mobile
+@media screen and (max-width: 576px) {
+  .about__banner {
+    height: 223px;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../../assets/aboutBannerMobile.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: brightness(70%);
+      border-radius: 10px;
+    }
+  }
+}

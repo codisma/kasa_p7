@@ -1,0 +1,58 @@
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    }
+
+    header,
+    main {
+    margin: 0 80px;
+    }
+
+    main {
+    min-height: 76vh;
+    }
+
+    ul,
+    ol {
+    list-style-type: none;
+    }
+
+    a {
+    color: $color-primary;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 24px;
+    }
+
+    /******* RESPONSIVE ************/
+
+    // Breakpoint écran large
+    @media screen and (min-width: 1400px) {
+    header,
+    main {
+        margin: 0 100px;
+    }
+    }
+
+    // Breakpoint tablette
+    @media screen and (max-width: 991px) {
+    header,
+    main {
+        margin: 0 40px;
+    }
+    }
+
+    //Breakpoint mobile
+    @media screen and (max-width: 576px) {
+    header,
+    main {
+        margin: 0 20px;
+    }
+    }
